@@ -47,7 +47,7 @@ function newsletter_send_email($email)
             <tr style="border-bottom: 2px solid #CCCCCC;">
                 <td>
                     <a style="max-width: 150px;" href="https://creatubrownie.com/" target="_blank">
-                        <img style="max-width: 150px;" src="https://creatubrownie.com/wp-content/uploads/2024/09/creatubrownie-logo.svg" alt="Creatubrownie">
+                        <img style="max-width: 150px;" src="https://creatubrownie.com/wp-content/uploads/2025/02/creatubrownie-logo.png" alt="Creatubrownie">
                     </a>
                 </td>
             </tr>
