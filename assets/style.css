@@ -47,7 +47,8 @@
     color: #000;
 }
 
-#newsletter-message {
+#newsletter-message,
+#contact-message {
     margin-top: 10px;
     font-weight: 600;
 }

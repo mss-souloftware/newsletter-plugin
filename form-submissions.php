@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Newsletter Subscription
+ * Plugin Name: Form Submissions
  * plugin URI: https://souloftware.com/
- * Description: A simple newsletter subscription plugin with AJAX and database storage.
+ * Description: A simple form submission plugin with AJAX and database storage.
  * Version: 1.0
  * Author: Souloftware
  * Author URI: https://souloftware.com/contact
@@ -22,4 +22,4 @@ require_once NEWSLETTER_PLUGIN_DIR . 'includes/ajax-handler.php';
 require_once NEWSLETTER_PLUGIN_DIR . 'includes/admin-page.php';
 
 // Activation Hook - Create Database Table
-register_activation_hook(__FILE__, 'newsletter_create_table');
+register_activation_hook(__FILE__, 'custom_plugin_activate');

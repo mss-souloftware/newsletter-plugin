@@ -32,6 +32,33 @@ function newsletter_submit()
 add_action('wp_ajax_newsletter_submit', 'newsletter_submit');
 add_action('wp_ajax_nopriv_newsletter_submit', 'newsletter_submit');
 
+
+// Contact Form AJAX Submission
+add_action('wp_ajax_submit_contact_form', 'submit_contact_form');
+add_action('wp_ajax_nopriv_submit_contact_form', 'submit_contact_form');
+
+function submit_contact_form()
+{
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'contact_form_submissions';
+
+    $name = sanitize_text_field($_POST['name']);
+    $email = sanitize_email($_POST['email']);
+    $phone = sanitize_text_field($_POST['phone']);
+    $message = sanitize_textarea_field($_POST['message']);
+
+    $wpdb->insert($table_name, [
+        'name' => $name,
+        'email' => $email,
+        'phone' => $phone,
+        'message' => $message,
+        'created_at' => current_time('mysql')
+    ]);
+
+    wp_send_json_success(['message' => '¡Mensaje enviado exitosamente!']);
+}
+
+// Send email to user.
 function newsletter_send_email($email)
 {
     $subject = "¡Gracias por unirte! Aquí tienes tu 10% 🎉";

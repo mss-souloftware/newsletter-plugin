@@ -32,6 +32,36 @@ function newsletter_form_shortcode()
 }
 add_shortcode('newsletter_form', 'newsletter_form_shortcode');
 
+
+function contact_form_shortcode()
+{
+    ob_start();
+    ?>
+
+    <form id="contactForm">
+        <div class="fieldWrapper">
+            <input type="text" placeholder="Nombre" id="contact_name" required>
+        </div>
+        <div class="fieldWrapper">
+            <input type="email" placeholder="Email" id="contact_email" required>
+        </div>
+        <div class="fieldWrapper">
+            <input type="tel" placeholder="Teléfono" id="contact_phone" required>
+        </div>
+        <textarea name="message" id="contact_message" rows="4" placeholder="Déjanos tu mensaje"></textarea>
+        <div class="fieldWrapper">
+            <button id="contactFormSubmit" type="submit">
+                Entregar
+                <span class="spinner" style="display:none;"></span>
+            </button>
+        </div>
+    </form>
+    <div id="contact-message"></div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('contact_form', 'contact_form_shortcode');
+
 // Enqueue JavaScript & CSS file
 function newsletter_enqueue_assets()
 {
